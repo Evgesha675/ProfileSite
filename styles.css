@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1e2e;
+    color: #a6e3a1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: #1e1e2e;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #a6e3a1;
+}
+
+.top-bar {
+    position: fixed; /* Fix the panel at the top */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgb(69, 70, 79); /* Dark background color */
+    z-index: 1;
+}
+
+.top-bar a {
+    color: #a6e3a1;
+    text-decoration: none; /* Remove default underline */
+    font-size: 1.5em;
+    position: relative; /* For pseudo-element */
+}
+
+.top-bar a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Height of underline */
+    background: #a6e3a1; /* Color of underline */
+    transform: scaleX(0); /* Initial state (invisible) */
+    transition: transform 0.3s ease; /* Smooth transition */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position of underline */
+}
+
+.top-bar a:hover::after {
+    transform: scaleX(1); /* Show underline on hover */
+}
+
+.top-bar .language-switch, .top-bar #current-time {
+    color: #a6e3a1;
+    font-size: 1.2em; /* Smaller text size */
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    margin-left: 10px; /* Margin for separation */
+}
+
+.active-language {
+    color: #ffcc00; /* Color for active language */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+#change-bg {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(69, 70,  79); /* Button background color */
+    color: #a6e3a1; /* Button text color */
+    padding: 15px; /* Increased padding for a larger button */
+    cursor: pointer;
+    font-size: 1. 5em; /* Increased font size for better visibility */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#change-bg:hover {
+    background-color: #a6e3a1; /* Change background color on hover */
+    color: #1e1e2e; /* Change text color on hover */
+}
+
+#resume {
+    display: none; /* Скрыть раздел резюме по умолчанию */
+    margin-top: 20px; /* Добавить отступ сверху */
+    padding: 20px; /* Внутренний отступ */
+    background-color: #1e1e2e; /* Темный фон для резюме, как в блоке портфолио */
+    border-radius: 15px; /* Закругленные углы */
+    border: 2px solid #a6e3a1; /* Цвет границы */
+    color: #a6e3a1; /* Цвет текста, как в блоке портфолио */
+    width: 80%; /* Ширина резюме */
+    max-width: 800px; /* Максимальная ширина резюме */
+    margin-left: auto; /* Центрирование по горизонтали */
+    margin-right: auto; /* Центрирование по горизонтали */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+}
+
+#resume h2 {
+    color: #a6e3a1; /* Цвет заголовков, как в блоке портфолио */
+    border-bottom: 2px solid #a6e3a1; /* Подчеркивание заголовков */
+    padding-bottom: 5px; /* Отступ снизу для заголовков */
+    font-family: 'Courier New', Courier, monospace; /* Шрифт, как в блоке портфолио */
+}
+
+#resume ul {
+    list-style-type: none; /* Убрать маркеры списка */
+    padding: 0; /* Убрать отступы */
+}
+
+#resume li {
+    margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+#resume a {
+    color: #007bff; /* Цвет ссылок */
+    text-decoration: none; /* Убрать подчеркивание */
+}
+
+#resume a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+.portfolio-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1e1e2e;
+    border-radius: 15px;
+    border: 2px solid #a6e3a1;
+}
+
+.media-container {
+    display: flex;
+    flex-direction: column; /* Или row для горизонтального расположения */
+    align-items: center;
+}
+
+.media-container img,
+.media-container video,
+.media-container iframe {
+    max-width: 100%; /* Ограничение ширины */
+    margin: 10px 0; /* Отступы между элементами */
+}
+.frame {
+    border: 2px solid #a6e3a1; /* Рамка вокруг содержимого */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: #1e1e2e; /* Фоновый цвет рамки */
+    padding: 5px; /* Отступы внутри рамки */
+    width: 640px; /* Установите желаемую ширину рамки */
+    height: 360px; /* Установите желаемую высоту рамки */
+    display: flex; /* Используем flex для центрирования содержимого */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+}
+.frame video {
+    max-width: 100%; /* Ограничение ширины видео */
+    max-height: 100%; /* Ограничение высоты видео */
+    object-fit: contain; /* Сохраняем пропорции видео */
+}
+
+.frame iframe {
+    width: 100%; /* Занимает всю ширину рамки */
+    height: 100%; /* Занимает всю высоту рамки */
+    border: none; /* Убираем рамку у iframe */
+}
+.slider {
+    position: relative;
+    max-width: 720px; /* Максимальная ширина слайдера */
+    max-height: 1280px;
+    margin: auto; /* Центрирование */
+    overflow: hidden; /* Скрыть переполнение */
+}
+
+.slides {
+    display: flex; /* Горизонтальное расположение слайдов */
+    transition: transform 0.5s ease; /* Плавный переход */
+}
+
+.slide {
+    min-width: 100%; /* Каждый слайд занимает 100% ширины слайдера */
+    box-sizing: border-box; /* Учитывать отступы и границы в ширине */
+    padding: 10px; /* Отступы вокруг слайда */
+    border: 2px solid #a6e3a1; /* Рамка вокруг слайда */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: #1e1e2e; /* Фоновый цвет слайда */
+}
+
+.slide img,
+.slide video {
+    max-width: 100%; /* Ограничение ширины изображений и видео */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    display: block; /* Убедитесь, что изображения и видео отображаются как блоки */
+    margin: auto; /* Центрирование содержимого */
+    object-fit: contain; /* Содержимое будет масштабироваться, сохраняя пропорции */
+}
+
+button.prev, button.next {
+    position: absolute; /* Абсолютное позиционирование для кнопок */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    color: white; /* Цвет текста */
+    border: none; /* Убрать границы */
+    cursor: pointer; /* Курсор в виде указателя */
+    padding: 10px; /* Отступы */
+    z-index: 1; /* Убедитесь, что кнопки находятся выше других элементов */
+}
+
+button.prev {
+    left: 10px; /* Положение кнопки "Назад" */
+}
+
+button.next {
+    right: 10px; /* Положение кнопки "Вперед" */
+}
+.frame ul {
+    list-style-type: none; /* Убрать маркеры списка */
+    padding: 0; /* Убрать отступы */
+}
+
+.frame li {
+    margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+.frame a {
+    color: #007bff; /* Цвет ссылок */
+    text-decoration: none; /* Убрать подчеркивание */
+}
+
+.frame a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+

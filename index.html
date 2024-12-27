@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the existing CSS file -->
+</head>
+<body>
+    <div class="top-bar">
+        <a href="#" id="portfolio-link"><i class="fas fa-id-card"></i></a>
+        <a href="#" id="resume-toggle"><i class="fas fa-user"></i></a>
+        <a href="#" id="dr-link"><span>AE</span></a> <!-- Добавьте id для ссылки на DR -->
+        <a href="#" id="html-link"><i class="fab fa-html5"></i></a>
+        
+        <span class="language-switch" id="language-switch" onclick="switchLanguage()">
+            <span id="lang-en" class="active-language">EN</span>/<span id="lang-ru">RU</span>
+        </span>
+        <span id="current-time"></span>
+    </div>
+    
+    <img alt="Background image of a terminal with system information and ASCII art" class="background-image" height="1080" src="images/1.png" width="1920"/>    
+    <div class="container" id="container">
+        <h1 id="portfolio-title">/portfolio/</h1>
+        <p id="name">Tetenkin Evgeniy</p>
+    </div>
+    
+    <button id="change-bg">
+        <i class="fas fa-image"></i> <!-- Image icon -->
+    </button>
+
+    <!-- Resume Section -->
+    <div id="resume" style="display: none;"> <!-- Скрыть по умолчанию -->
+        <h2>Personal Information</h2>
+        <ul>
+            <li>Evgeniy, tg: <a href="https://t.me/Evgesh_ochka">@Evgesh_ochka</a></li>
+            <li>Gmail: <a href="mailto:tetenkinevgenij@gmail.com">tetenkinevgenij@gmail.com</a></li>
+            <li>Git: <a href="https://github.com/Evgesha675">https://github.com/Evgesha675</a></li>
+            <li>Pin: <a href="https://ru.pinterest.com/evgesha6/">https://ru.pinterest.com/evgesha6/</a></li>
+        </ul>
+        <h2>Digital Designer</h2>
+        <p>Brief description: "Creative digital designer with experience in creating interactive media, animation, layout, and developing visual identities."</p>
+        <h2>Key Skills</h2>
+        <ul>
+            <li>Animation and interactive design: Adobe Animate, TouchDesigner, DaVinci Resolve.</li>
+            <li>Web development: HTML, CSS, JavaScript, QML.</li>
+            <li>Project management tools: Git, GitHub.</li>
+            <li>Graphic design: logo creation.</li>
+        </ul>
+        <h2>Education</h2>
+        <ul>
+            <li>ISU FBKI Applied Informatics in Design.</li>
+        </ul>
+    </div>
+
+    <!-- Секция с примерами работ в DR -->
+    <div id="dr" class="portfolio-section" style="display: none;"> <!-- Скрыть по умолчанию -->
+        <h2>Animations and Video Content</h2>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <div class="frame">
+                        <img src="animation/Picture2.gif" alt="Пример работы 1" />
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame">
+                        <video controls>
+                            <source src="animation/songif.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame">
+                        <img src="animation/Timeline .gif" alt="Пример работы 3" />
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame">
+                        <video controls>
+                            <source src="TouchDesigner/HW-21-10-2024.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame">
+                        <video controls>
+                            <source src="TouchDesigner/TDMovieOut.0.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/CZFVH9PIAqw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+   <!-- Секция для отображения HTML-сайтов -->
+
+    <div id="html-section" class="portfolio-section" style="display: none;">
+        <h2>Мои работы по вёрстке</h2>
+        <ul>
+            <li>
+                <a href="https://evgesha675.github.io/avitoapp/my-app/index.html" target="_blank">
+                    Avito App (ссылка откроется в новой вкладке)
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
